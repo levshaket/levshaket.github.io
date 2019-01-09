@@ -1,0 +1,139 @@
+.stage {
+  position: relative;
+  background-color: white;
+  top: 0px;
+  width: 10px;
+  height: 10px;
+  margin: 15px;
+  padding: 15px;
+  outline: 5px solid black;
+  perspective: 5000px;
+  perspective-origin: 50% 50%;
+}
+
+.scale {
+  transform: perspective(500px) scale3d(0.2, 0.16, 0.2) translateZ(100px);
+}
+
+.pyramid3d {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  transition: transform 1s ease-out;
+  transform-style: preserve-3d;
+}
+
+.triangle, .square {
+  transform-style: preserve-3d;
+  transform-origin: left top;
+  transition: transform 200ms ease-out;
+}
+
+/* note that border dimension includes border set in '.side' CSS Class */
+.triangle:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-color: black;
+  border-width: 176px 100px 100px 100px;
+}
+
+.square {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  background: black;
+  border: 5px solid white;
+  font-size: 8em;
+  color: #fff;
+  text-align: center;
+  font-family: alef, arial;
+  font-weight: bold;
+}
+.square.small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+}
+
+.rect {
+  width: 16px;
+  height: 100px;
+  position: absolute;
+  background: black;
+  border: 2px solid white;
+}
+
+/* note that translation includes border set in '.side' CSS Class */
+.side1 {
+  /* square */
+  transform: translatez(200px);
+  background: black;
+}
+.side1.small {
+  transform: translatez(300px) translatex(90px) translatey(90px);
+}
+
+.side2 {
+  /* triangle */
+  transform: translatex(0) rotatey(-125deg) rotatez(90deg);
+}
+.side2.square {
+  background: black;
+  transform: translatex(0) translatez(200px) rotatey(-90deg) rotatez(90deg);
+}
+.side2.rect {
+  background: black;
+  transform: translatex(80px) translatey(50px) translatez(250px) rotatey(90deg) rotatez(90deg);
+}
+
+.side3 {
+  /* triangle */
+  transform: translatex(200px) rotatez(90deg) rotatex(-55deg);
+}
+.side3.square {
+  background: black;
+  transform: translatex(200px) translatez(200px) translatey(200px) rotatez(-90deg) rotatex(-90deg);
+}
+.side3.rect {
+  background: black;
+  transform: translatex(100px) translatez(250px) translatey(50px) rotatez(-90deg) rotatex(-90deg);
+}
+
+.side4 {
+  /* triangle */
+  transform: translatez(0) rotatex(-55deg);
+}
+.side4.square {
+  background: black;
+  transform: translatez(200px) rotatex(-90deg) rotatey(-180deg) translatex(-200px);
+}
+.side4.rect {
+  transform: translatez(250px) translatey(40px) rotatex(90deg) translatex(90px);
+}
+
+.side5 {
+  /* triangle */
+  transform: translatey(200px) rotatex(-125deg);
+}
+.side5.square {
+  background: black;
+  transform: translatey(200px) translatez(200px) rotatex(-90deg);
+}
+.side5.rect {
+  transform: translatey(60px) translatex(90px) translatez(250px) rotatex(-90deg);
+}
+
+.side2:before, .side3:before {
+  border-color: black transparent transparent transparent;
+}
+
+.side4:before, .side5:before {
+  border-color: black transparent transparent transparent;
+}
+
+.side2:before, .side3:before{ border-color: rgba(black, 1) transparent transparent transparent; }
+.side4:before, .side5:before{ border-color: rgba(black, 1) transparent transparent transparent; }

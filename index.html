@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"-->
+
+<html lang="en-US">
+	<head>
+		<title>dreidelware.org</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/dreidel.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 	<!-- consider using Modernizr-->
+		<script src="js/wordlist.js"></script>
+		<script src="js/dreidel.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/randomize.js"></script>
+	</head>
+	<body>
+		<div id="diceware" class="flex-container">
+			<div name="title">
+				<h1>dreidelware.org</h1>			
+			</div>
+			<div class="slider-container">
+				<input class="slider" id="slider" type="range" min="1" max="7" value="4">
+			</div>
+			<div id="dreidel-octet-container" name="dreidel-octet-container" class="flex-container">
+			</div>
+			<button id="generate-passphrase" name="generate-passphrase">Generate Passphrase</button>
+			<div name="passphrase">
+				<h2 id="passphrase"></h2>
+				<h3 id="hebrew"></h3>
+				<h3 id="binary"></h3>
+				<h3 id="integer"></h3>
+			</div>
+		</div>
+		<footer>
+			<p><strong>Dreidelware: generate secure and memorable passphrases on web clients.</strong></p>
+			<ul>
+				<li><p>window.crypto is used as the cryptographically strong source of pseudo random integers that serve as indices to memorable wordlist provided to your device. The passphrase generation is conducted on your device. This means that if you believe you may have malware on your device, please do not use this application. Then again, if you have malware on your device, you have bigger fish to fry.</p></li>
+				<li><p>Please do not spin dreidels in real life (or coins, for that matter) to obtain random numbers. Spinning is a poor randomization process, since it amplifies the minute density differentials of the spinning object. Yes, this means your dreidel game is skewed, but if you grk, you probably shouldn't be playing dreidel in the first place.</p></li>
+				<li><p>|S| = P(2**16, n), where S is the search space and n is the desired passphrase length. For n=4, |S| > 1.8E19, acceptable in 2019. Adjust n (number of dreidel rows) according to your passphrase complexity needs.</p></li>
+			</ul>
+			<p>Copyright © 2019 Lev Shaket</p>
+		</footer>
+	</body>
+</html>

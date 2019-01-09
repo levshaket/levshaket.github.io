@@ -1,0 +1,44 @@
+.flex-container {
+	display: flex;
+	color: white;
+	background-color: black;
+	flex-flow: column wrap;
+	align-items: center;
+}
+.flex-container[name="dreidel-octet-container"] {
+	background-color: white;
+	flex-flow: column wrap;
+	align-items: center;
+	border: 10px solid black;
+	outline: 10px solid white;
+	width: auto; /* width should be 1-2x width of octet*/	
+}
+.flex-container[name="dreidel-octet"] {
+	background-color: white;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+.slider-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;	
+}
+.slider {
+	width: 50%;
+	margin-bottom: 10px;
+}
+button {
+	border: 1px solid transparent;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+}
+button[name="generate-passphrase"] {
+	background-color: DodgerBlue;
+	margin-top: 40px;
+}
+button[name="generate-passphrase"]:hover {
+	background-color: Tomato;
+}
+
+li {list-style-type:"square"}
